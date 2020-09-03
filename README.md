@@ -23,7 +23,7 @@ RESOURSE_ID // 资源组ID
 4:yml文件更改
 
 ./IBM_Cloud_CLI/ibmcloud cf install
-修改成
+修改成  第37行  （测试最后价格空格成功） 
 ./IBM_Cloud_CLI/ibmcloud cf install -v 6.51.0
 
 5.CF反代脚本：
