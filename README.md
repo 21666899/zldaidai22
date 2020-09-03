@@ -5,7 +5,38 @@
 1. IBM Cloud Fonudray搭建V2Ray ws
 2. 利用Github的Actions 每周重启 IBM Cloud Fonudray
 3. Cloudflare 高速节点中转
+1: https://www.xjycloud.xyz
+(注册即送50g免费流量)
+2:https://www.xjycloud.pw
+【安装脚本】: 
+一键安装脚本：wget --no-check-certificate -O install.sh https://raw.githubusercontent.com/CCChieh/IBMYes/master/install.sh && chmod +x install.sh  && ./install.sh
 
+2.资源组ID:
+ibmcloud resource groups
+
+3.4个secret:
+IBM_ACCOUNT // IBM Cloud的登录邮箱和密码
+IBM_APP_NAME // 应用的名称
+REGION_NUM // 区域编码
+RESOURSE_ID // 资源组ID
+
+4:yml文件更改
+
+./IBM_Cloud_CLI/ibmcloud cf install
+修改成
+./IBM_Cloud_CLI/ibmcloud cf install -v 6.51.0
+
+5.CF反代脚本：
+addEventListener(
+"fetch",event => {
+let url=new URL(event.request.url);
+url.hostname="你的域名";
+let request=new Request(url,event.request);
+event. respondWith(
+fetch(request)
+)
+}
+)
 # 使用IBM Cloud Fonudray搭建V2Ray
 
 首先注册https://cloud.ibm.com/
